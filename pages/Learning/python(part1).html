@@ -14264,6 +14264,251 @@ My Name is Max
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>17. Write a Python program to test whether a number is within 100 of 1000 or 2000.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">near_thousand</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">100</span> <span class="ow">and</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">1000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number is </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> and it is within (0,1000] &#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">1000</span> <span class="ow">and</span> <span class="n">n</span><span class="o">&lt;=</span><span class="mi">2000</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The number is </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> and it is within (1000,2000]&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Number out of range&#39;</span><span class="p">)</span>
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Type a number &#39;</span><span class="p">))</span>
+<span class="n">near_thousand</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Type a number 1000
+The number is 1000 and it is within (0,1000] 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>18. Write a Python program to calculate the sum of three given numbers, if the values are equal then return three times of their sum.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n1</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Type first number &#39;</span><span class="p">))</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Type second number &#39;</span><span class="p">))</span>
+<span class="n">n3</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Type third number &#39;</span><span class="p">))</span>
+
+
+
+<span class="k">def</span> <span class="nf">iki</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n3</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n1</span><span class="o">==</span><span class="n">n2</span><span class="o">==</span><span class="n">n3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="o">+</span><span class="n">n3</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="o">+</span><span class="n">n3</span><span class="p">)</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">iki</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">n3</span><span class="p">));</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Type first number 1
+Type second number 1
+Type third number 2
+4.0
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>19. Write a Python program to get a new string from a given string where "Is" has been added to the front. If the given string already begins with "Is" then return the string unchanged.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">str</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">check_str</span><span class="p">(</span><span class="nb">str</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="nb">str</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Is&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">str</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Is&#39;</span> <span class="o">+</span> <span class="nb">str</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">check_str</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>IsHello
+IsHello
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>20.Write a Python program to get a string which is n (non-negative integer) copies of a given string.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Type number of copies of a given string &#39;</span><span class="p">))</span>
+<span class="n">str1</span> <span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Type a string &#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span>
+<span class="k">def</span> <span class="nf">mult_str1</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span><span class="o">&lt;</span><span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">str1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;Bye </span><span class="si">{</span><span class="p">(</span><span class="n">str1</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span><span class="si">}</span><span class="s1">&#39;</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="n">mult_str1</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
+    
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Type number of copies of a given string 5
+Type a string heloo
+Bye Hello Hello Hello Hello Hello 
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>21. Write a Python program to find whether a given number (accept from the user) is even or odd, print out an appropriate message to the user.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Type a number &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">isEvenOrOdd</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">num</span><span class="o">%</span><span class="k">2</span>==0 and num&gt;0:
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is Even&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is Odd&#39;</span><span class="p">)</span>
+<span class="n">isEvenOrOdd</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Type a number 25
+The number is Odd
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
