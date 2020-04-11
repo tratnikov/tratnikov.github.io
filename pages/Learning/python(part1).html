@@ -14509,6 +14509,358 @@ The number is Odd
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>22. Write a Python program to count the number 4 in a given list.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">list_count_4</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+  <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>  
+  <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+      <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="n">count</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">list_count_4</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list_count_4</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count1</span><span class="p">(</span><span class="n">nums</span><span class="p">,</span><span class="n">number</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">number</span><span class="p">))</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">count1</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>2</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>24. Write a Python program to test whether a passed letter is a vowel or not</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_vowel</span><span class="p">(</span><span class="n">char</span><span class="p">):</span>
+    <span class="n">list_of_vowels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="s1">&#39;i&#39;</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="s1">&#39;u&#39;</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">char</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_of_vowels</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not a vowel&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Vowel&#39;</span><span class="p">)</span>
+<span class="n">is_vowel</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span>
+<span class="n">is_vowel</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Not a vowel
+Vowel
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>25. Write a Python program to check whether a specified value is contained in a group of values.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">presence</span><span class="p">(</span><span class="n">list_of_char</span><span class="p">,</span><span class="n">what_do_we_search</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">what_do_we_search</span> <span class="ow">in</span> <span class="n">list_of_char</span><span class="p">;</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">what_we_seach</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">presence</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">what_we_seach</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>26.Write a Python program to create a histogram from a given list of integers.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">create_his</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="n">char</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">char</span><span class="o">*</span><span class="n">value</span><span class="p">)</span>
+<span class="n">create_his</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span><span class="s2">&quot;@&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>@@@
+@
+@@@@@@@
+@
+@@@@@@@@
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>27.Write a Python program to concatenate all elements in a list into a string and return it.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="k">def</span> <span class="nf">concat_arr</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+    <span class="n">str1</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+        <span class="n">str1</span> <span class="o">+=</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">str1</span><span class="p">;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">concat_arr</span><span class="p">(</span><span class="n">arr</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>123
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><mark>28. Write a Python program to print all even numbers from a given numbers list in the same order and stop the printing if any numbers that come after 237 in the sequence.</mark></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">386</span><span class="p">,</span> <span class="mi">462</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">418</span><span class="p">,</span> <span class="mi">907</span><span class="p">,</span> <span class="mi">344</span><span class="p">,</span> <span class="mi">236</span><span class="p">,</span> <span class="mi">375</span><span class="p">,</span> <span class="mi">823</span><span class="p">,</span> <span class="mi">566</span><span class="p">,</span> <span class="mi">597</span><span class="p">,</span> <span class="mi">978</span><span class="p">,</span> <span class="mi">328</span><span class="p">,</span> <span class="mi">615</span><span class="p">,</span> <span class="mi">953</span><span class="p">,</span> <span class="mi">345</span><span class="p">,</span> 
+    <span class="mi">399</span><span class="p">,</span> <span class="mi">162</span><span class="p">,</span> <span class="mi">758</span><span class="p">,</span> <span class="mi">219</span><span class="p">,</span> <span class="mi">918</span><span class="p">,</span> <span class="mi">237</span><span class="p">,</span> <span class="mi">412</span><span class="p">,</span> <span class="mi">566</span><span class="p">,</span> <span class="mi">826</span><span class="p">,</span> <span class="mi">248</span><span class="p">,</span> <span class="mi">866</span><span class="p">,</span> <span class="mi">950</span><span class="p">,</span> <span class="mi">626</span><span class="p">,</span> <span class="mi">949</span><span class="p">,</span> <span class="mi">687</span><span class="p">,</span> <span class="mi">217</span><span class="p">,</span> 
+    <span class="mi">815</span><span class="p">,</span> <span class="mi">67</span><span class="p">,</span> <span class="mi">104</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">892</span><span class="p">,</span> <span class="mi">894</span><span class="p">,</span> <span class="mi">767</span><span class="p">,</span> <span class="mi">553</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">379</span><span class="p">,</span> <span class="mi">843</span><span class="p">,</span> <span class="mi">831</span><span class="p">,</span> <span class="mi">445</span><span class="p">,</span> <span class="mi">742</span><span class="p">,</span> <span class="mi">717</span><span class="p">,</span> 
+    <span class="mi">958</span><span class="p">,</span><span class="mi">743</span><span class="p">,</span> <span class="mi">527</span><span class="p">];</span>
+
+<span class="k">def</span> <span class="nf">print_num</span><span class="p">(</span><span class="n">arrr_num</span><span class="p">,</span><span class="n">stop_num</span><span class="p">):</span>
+    <span class="n">new_arr</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">arrr_num</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="n">stop_num</span><span class="p">:</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">new_arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_arr</span><span class="p">;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">print_num</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="mi">47</span><span class="p">))</span>    
+<span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">print_num</span><span class="p">(</span><span class="n">numbers</span><span class="p">,</span><span class="mi">47</span><span class="p">)))</span> <span class="c1">#find number of items in list</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[386, 462]
+2
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
