@@ -13084,21 +13084,101 @@ div#notebook {
 4. use &lt;name&gt;;
 5. select database();</code></pre>
 <h3 id="Data-Types-Main">Data Types Main<a class="anchor-link" href="#Data-Types-Main">&#182;</a></h3>
-<pre><code>1.INT # example : 0, -10, 20, 2000
-2.VARCHAR(MAX_LENGHT) - variation between 1 and 255 characters
-3.CHAR - fixed lenght</code></pre>
+<pre><code>6. INT # example : 0, -10, 20, 2000  
+7. VARCHAR(MAX_LENGHT) - variation between 1 and 255 characters  
+8. CHAR - fixed lenght</code></pre>
 <h3 id="Creating,-Deleting-Tables-and-show-columns">Creating, Deleting Tables and show columns<a class="anchor-link" href="#Creating,-Deleting-Tables-and-show-columns">&#182;</a></h3>
-<pre><code>1. CREATE TABLE &lt;name&gt;
+<pre><code>
+9. CREATE TABLE &lt;name&gt;
 (
     column_name1 data_type1,
     column_name2 data_type2,
     ...
 );
 
-2. SHOW  TABLES;
-3. SHOW COLUMNS FROM &lt;table_name&gt;;
-4. DESC &lt;table_name&gt;;
-5. DROP TABLE &lt;table_name&gt;;</code></pre>
+10. SHOW  TABLES;
+11. SHOW COLUMNS FROM &lt;table_name&gt;;
+12. DESC &lt;table_name&gt;;
+13. DROP TABLE &lt;table_name&gt;;</code></pre>
+<h3 id="Inserting-data">Inserting data<a class="anchor-link" href="#Inserting-data">&#182;</a></h3>
+<pre><code>14. INSERT INTO &lt;table_name&gt;(name,age)
+   VALUES('str',int)
+
+15. SELECT * from cats;</code></pre>
+<h3 id="Multiple-Insert">Multiple Insert<a class="anchor-link" href="#Multiple-Insert">&#182;</a></h3>
+<pre><code>16. INSERT INTO &lt;table_name&gt;(name,age)
+   VALUES('str',int),
+         ('str',int),
+         ('str',int);</code></pre>
+<h3 id="Warnings">Warnings<a class="anchor-link" href="#Warnings">&#182;</a></h3>
+<pre><code>17.SHOW WARNINGS;</code></pre>
+<h3 id="NOT-NULL">NOT NULL<a class="anchor-link" href="#NOT-NULL">&#182;</a></h3>
+<pre><code>18.CREATE TABLE cats2
+(
+name VARCHAR(100) NOT NULL,
+age INT NOT NULL
+);</code></pre>
+<h3 id="Default-Values">Default Values<a class="anchor-link" href="#Default-Values">&#182;</a></h3>
+<pre><code>19. CREATE TABLE cats3(
+name VARCHAR(100) DEFAULT 'unnamed',
+age INT DEFAULT 99
+);</code></pre>
+<h3 id="Primary-key">Primary key<a class="anchor-link" href="#Primary-key">&#182;</a></h3>
+<pre><code>a unique ident
+
+20.CREATE TABLE unique_cats (
+    cat_id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100)
+    age INT
+    PRIMARY KEY (cat_id));</code></pre>
+<h3 id="CRUD">CRUD<a class="anchor-link" href="#CRUD">&#182;</a></h3>
+<pre><code>21.SELECT name FROM cats;
+22.SELECT name, age FROM cats;
+23.SELECT * FROM cats WHERE age=4;
+24.SELECT cat_id AS id, name FROM cats;
+25.UPDATE cats SET breed='Shorthair' 
+WHERE breed='Tabby';
+26.DELETE FROM cats WHERE name='Egg';</code></pre>
+<h3 id="STR-OPER">STR OPER<a class="anchor-link" href="#STR-OPER">&#182;</a></h3>
+<pre><code>27.SELECT 
+    CONCAT(author_fname,' ',author_lname) AS 'full name'
+FROM books;
+
+28.SELECT author_fname AS first, author_lname AS last,
+    CONCAT(author_fname,' ',author_lname) AS 'full name'
+FROM books;
+
+29.SELECT 
+    CONCAT_WS(' - ', title, author_fname, author_lname) 
+FROM books;
+
+30. SELECT SUBSTRING('Hello World', 1, 4);
+31. SELECT SUBSTRING('Hello World', 7);
+32. SELECT SUBSTRING('Hello World', -3);
+33. SELECT SUBSTRING('Hello World', -3);
+
+34.SELECT SUBSTRING(title,1,10) AS 'short title' FROM books;
+
+35.SELECT CONCAT(SUBSTRING(title,1,10),'...') AS 'short title' FROM books;
+
+36.SELECT REPLACE('Hello World','l','7'); - case sensetive
+
+37.SELECT
+  REPLACE('cheese bread coffee milk', ' ', ' and ');
+
+38.SELECT REPLACE(title,'e','3') FROM books;
+
+39.SELECT
+    SUBSTRING(REPLACE(title, 'e','3'),1,10) FROM books;
+
+40.SELECT REVERSE('Hello World')
+
+41.SELECT REVERSE(title) AS 'reverse' FROM books;
+
+42.SELECT CHAR_LENGTH('Hello World'); 
+
+43.SELECT UPPER('Hello World');
+44.SELECT LOWER('Hello World');</code></pre>
 
 </div>
 </div>
