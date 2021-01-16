@@ -33,7 +33,6 @@
           <li class="active"><a href="#hero">Home</a></li>
           <li><a href="#about">About Me</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#skills">Skills</a></li>
           <li><a href="#me">Contact Me</a></li>
         </ul>
       </nav>
@@ -56,7 +55,7 @@
     <section id="about" class="about">
       <div class="container">	
            <div class="col-lg-12">
-	<div class="section-title" data-aos="fade-up">
+	<div class="section-title">
             <h2>About me</h2>
 	</div>
             <p style="text-align: justify;">
@@ -80,7 +79,6 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
               <i class="icofont-license"></i>
               <h4>Curriculum vitae</h4>
               <p><a href="CV_Tratnikov.pdf" download >Download CV</a></p>
-              <p><a href="grades.pdf" download >Download transcript of records</a></p>
             </div>                
         </div>
 
@@ -89,17 +87,16 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
 <section id="portfolio" class="portfolio ">
       <div class="container">
 
-        <div class="section-title" data-aos="fade-up">
+        <div class="section-title">
           <h2>Portfolio</h2>
-          <p>In this section you will find projects, which can perfectly represent the state of my knowledge  <img src="./assets/img/brain.svg" </p>
-        </div>
+          </div>
 
-        <div class="row" data-aos="fade-up">
+        <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">Main Projects</li>
-              <li data-filter=".filter-learning">Learning Path</li>
+              <li data-filter=".filter-app">Tools</li>
+              <li data-filter=".filter-learning">Projects</li>
               <!-- <li data-filter=".filter-web">Web</li> -->
             </ul>
           </div>
@@ -109,16 +106,16 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
 
 
         <!-- First Row -->
-        <div class="row portfolio-container" data-aos="fade-up">
+        <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-learning">
+		<div class="col-lg-4 col-md-6 portfolio-item filter-learning">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/tableau.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/jup.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Tableau + Power BI</h4>
-                <p>Examples</p>
+                <h4>Learning process</h4>
+                <p>The way I learn</p>
                 <div class="portfolio-links">
-                <a href="./pages/tableau.html"  title="More Details"><i class="icofont-library"></i></i></a>
+                <a href="./pages/learning.html"  title="More Details"><i class="icofont-library"></i></i></a>
                 </div>
               </div>
             </div>
@@ -137,7 +134,25 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
             </div>
           </div>
 
+          <div class="col-lg-4 col-md-6 portfolio-item filter-learning">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/pandas.jpg" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>Pandas</h4>
+                <p>Examples</p>
+                <div class="portfolio-links">
+                <a href="./pages/pandas.html"  title="More Details"><i class="icofont-library"></i></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           
+        </div>
+<!-- End Row 1 -->
+
+<!-- New Row 2 -->
+        <!-- <div class="row portfolio-container">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-learning">
             <div class="portfolio-wrap">
@@ -147,27 +162,6 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
                 <p>Examples</p>
                 <div class="portfolio-links">
                 <a href="./pages/pandas.html"  title="More Details"><i class="icofont-library"></i></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-         
-
-        </div>
-<!-- End Row 1 -->
-
-<!-- New Row 2 -->
-        <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-learning">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/jup.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Learning process</h4>
-                <p>The way I learn</p>
-                <div class="portfolio-links">
-                <a href="./pages/learning.html"  title="More Details"><i class="icofont-library"></i></i></a>
                 </div>
               </div>
             </div>
@@ -201,11 +195,11 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
           </div>
 
 
-        </div>
+        </div> -->
         <!-- End Row 2 -->
 
         <!-- New Row 3 -->
-        <div class="row portfolio-container" data-aos="fade-up">
+        <!-- <div class="row portfolio-container">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-learning">
             <div class="portfolio-wrap">
@@ -223,69 +217,14 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
         
 
 
-        </div>
+        </div> -->
         <!-- End Row 3 -->
 
 
 <!-- End lEARNING -->
-
-
-
       </div>
     </section>
     
-   <!-- ======= Features Section ======= -->
-    <section id="skills" class="features">
-      <div class="container">
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>What do I use ? <img src="./assets/img/tools.svg"</p>
-        </div>
-       
-        <div class="row">
-          <div class="col-lg-4 mb-5 mb-lg-0" >
-            <ul class="nav nav-tabs flex-column">
-              <li class="nav-item">
-                <a class="nav-link active show" data-toggle="tab" href="#tab-1">
-                  <h4>Web skills</h4>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-toggle="tab" href="#tab-2">
-                  <h4>Data skills</h4>
-                </a>
-              </li>
-              <li class="nav-item mt-2">
-                <a class="nav-link" data-toggle="tab" href="#tab-3">
-                  <h4>Soft skills</h4>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-7 ml-auto" >
-            <div class="tab-content">
-              <div class="tab-pane active show" id="tab-1">
-                <figure>
-                  <img src="assets/img/1.svg" alt="" class="img-fluid">
-                </figure>
-              </div>
-              <div class="tab-pane" id="tab-2">
-                <figure>
-                  <img src="assets/img/2.svg" alt="" class="img-fluid">
-                </figure>
-              </div>
-              <div class="tab-pane" id="tab-3">
-                <figure>
-                  <img src="assets/img/3.svg" alt="" class="img-fluid">
-                </figure>
-              </div>
-            
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Features Section -->
    
 
 
@@ -298,15 +237,14 @@ At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergr
 
       <div class="container ik">
 
-        <div class="section-title">
+        <div class="section-title" >
 
           <h2>Contact me</h2>
-          <p>Please let me know, if you are interested in me. Happy to hear from you soon <img src="./assets/img/smile.svg" </p>
         </div>
 
      <div class="row justify-content-center">
  	 <div class="social">
-	<div style="font-size: 5rem;">
+	<div style="font-size: 5rem; height:50vh">
 
                   <a style="text-decoration:none;color:#1bac91" href="https://www.linkedin.com/in/tratnikov/" data-toggle="tooltip" title="Add me on Linkedin"><i class="icofont-linkedin"></i></a>
                   <a style="text-decoration:none;color:#1bac91" href="mailto:m.tratnikov@gmail.com" data-toggle="tooltip" title="Write me an email"> <i class="icofont-ui-email"></i></a>
