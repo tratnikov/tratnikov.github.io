@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Basics</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Matplotlib+Tkinter</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14256,27 +14256,65 @@ a.anchor-link {
     </script>
     <!-- End of mathjax configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Inspired by Python GUI's With TKinter codemy.com</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Radiobutton</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backends.backend_tkagg</span> <span class="kn">import</span> <span class="n">FigureCanvasTkAgg</span><span class="p">,</span><span class="n">NavigationToolbar2Tk</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">myLabel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
-<span class="n">myLabel2</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World 2&#39;</span><span class="p">)</span>
-<span class="n">myLabel</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">myLabel2</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
 
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">_quit</span><span class="p">():</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>     <span class="c1"># stops mainloop</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>  <span class="c1"># this is necessary on Windows to prevent</span>
+                    <span class="c1"># Fatal Python Error: PyEval_RestoreThread: NULL tstate</span>
+        
+
+            
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbarFrame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">)</span>
+<span class="n">toolbarFrame</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbar</span> <span class="o">=</span> <span class="n">NavigationToolbar2Tk</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">toolbarFrame</span><span class="p">)</span>
+
+
+<span class="n">r</span> <span class="o">=</span><span class="n">IntVar</span><span class="p">()</span>
+<span class="n">Radiobutton</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span><span class="n">variable</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">click</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">()))</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Radiobutton</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Option 2&quot;</span><span class="p">,</span><span class="n">variable</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">click</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">()))</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">_quit</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
+
+<span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14284,35 +14322,101 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Postioning</span>
-</pre></div>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Listbox</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backends.backend_tkagg</span> <span class="kn">import</span> <span class="n">FigureCanvasTkAgg</span><span class="p">,</span><span class="n">NavigationToolbar2Tk</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">myLabel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
-<span class="n">myLabel2</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World 2&#39;</span><span class="p">)</span>
-<span class="n">myLabel</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">myLabel2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">my_list</span><span class="o">=</span><span class="n">Listbox</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">my_list</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;4&#39;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list2</span><span class="p">:</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span><span class="n">item</span><span class="p">)</span>
+
+    
+               
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">val</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbarFrame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">)</span>
+<span class="n">toolbarFrame</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbar</span> <span class="o">=</span> <span class="n">NavigationToolbar2Tk</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">toolbarFrame</span><span class="p">)</span>
+
+
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">_quit</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Plot&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">click</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ACTIVE</span><span class="p">))))</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+
 
 <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+
+
+    
 </pre></div>
 
      </div>
@@ -14320,317 +14424,99 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Buttons</span>
-</pre></div>
+<div class="jp-Cell-outputWrapper">
 
-     </div>
-</div>
-</div>
-</div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="jp-OutputArea jp-Cell-outputArea">
 
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<div class="jp-OutputArea-child">
 
-<span class="n">myLabel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
-<span class="n">myButton</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
-<span class="n">myLabel</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">myButton</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
 
-     </div>
-</div>
-</div>
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Assign function to a button</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">click</span><span class="p">():</span>
-    <span class="n">myLabel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Hello World&#39;</span><span class="p">)</span>
-    <span class="n">myLabel</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">myButton</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">click</span><span class="p">,</span><span class="n">fg</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#FFF&#39;</span><span class="p">)</span>
-<span class="n">myButton</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Input box</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-
-<span class="n">e</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">,)</span>
-<span class="n">e</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">e</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Enter your name&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">click</span><span class="p">():</span>
-    <span class="n">myLabel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">e</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
-    <span class="n">myLabel</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">myButton</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">click</span><span class="p">,</span><span class="n">fg</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#FFF&#39;</span><span class="p">)</span>
-<span class="n">myButton</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Button inputs</span>
-</pre></div>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Clear canvas</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backends.backend_tkagg</span> <span class="kn">import</span> <span class="n">FigureCanvasTkAgg</span><span class="p">,</span><span class="n">NavigationToolbar2Tk</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-
-<span class="n">e</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">,)</span>
-<span class="n">e</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">e</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Enter your name&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">myLabel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">x</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">myLabel</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">myButton</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">command</span><span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">click</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="n">fg</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#FFF&#39;</span><span class="p">)</span>
-<span class="n">myButton</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-
-<span class="n">e</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">50</span><span class="p">,)</span>
-<span class="n">e</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">e</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;Enter your name&quot;</span><span class="p">)</span>
-
-
-<span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">myLabel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">get</span><span class="p">())</span><span class="o">*</span><span class="mi">10</span><span class="p">)</span>
-    <span class="n">myLabel</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">myButton</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Click me&#39;</span><span class="p">,</span><span class="n">padx</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">pady</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span><span class="n">command</span><span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="n">click</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="n">fg</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s1">&#39;#FFF&#39;</span><span class="p">)</span>
-<span class="n">myButton</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Icons Images and Exit buttons</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
 <span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
 <span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-<span class="n">button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Exit&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">root</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
-<span class="n">button</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
+<span class="n">root</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">my_list</span><span class="o">=</span><span class="n">Listbox</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">my_list</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-     </div>
-</div>
-</div>
-</div>
+<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;4&#39;</span>
+<span class="p">]</span>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Radio Buttons</span>
-</pre></div>
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list2</span><span class="p">:</span>
+    <span class="n">my_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span><span class="n">item</span><span class="p">)</span>
 
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
+    
+               
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
 <span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
-    <span class="n">myLabel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">val</span><span class="p">)</span>
-    <span class="n">myLabel</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">val</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 
-
-<span class="n">r</span> <span class="o">=</span><span class="n">IntVar</span><span class="p">()</span>
-<span class="n">r</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;2&#39;</span><span class="p">)</span>
-
-<span class="n">Radiobutton</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Option 1&quot;</span><span class="p">,</span><span class="n">variable</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">click</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">()))</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">Radiobutton</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Option 2&quot;</span><span class="p">,</span><span class="n">variable</span><span class="o">=</span><span class="n">r</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">click</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">()))</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Message Box</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span>
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-<span class="c1">#showwarning,showerror askquestion</span>
-<span class="k">def</span> <span class="nf">popup</span><span class="p">():</span>
-    <span class="n">response</span><span class="o">=</span><span class="n">messagebox</span><span class="o">.</span><span class="n">askyesno</span><span class="p">(</span><span class="s2">&quot;This is my Popup!&quot;</span><span class="p">,</span><span class="s2">&quot;Hello World&quot;</span><span class="p">)</span>
-    <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">response</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="k">def</span> <span class="nf">_clear</span><span class="p">():</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
         
-<span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Text&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">popup</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbarFrame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">)</span>
+<span class="n">toolbarFrame</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbar</span> <span class="o">=</span> <span class="n">NavigationToolbar2Tk</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">toolbarFrame</span><span class="p">)</span>
+
+
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Plot&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">click</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ACTIVE</span><span class="p">))))</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Clear&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">_clear</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">_quit</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
 
 <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
@@ -14640,312 +14526,108 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># New Window</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span>
+<div class="jp-Cell-outputWrapper">
 
 
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
+<div class="jp-OutputArea jp-Cell-outputArea">
 
+<div class="jp-OutputArea-child">
 
-<span class="k">def</span> <span class="nf">open</span><span class="p">():</span>
-    <span class="n">top</span> <span class="o">=</span> <span class="n">Toplevel</span><span class="p">()</span>
-    <span class="n">top</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Another one&quot;</span><span class="p">)</span>
-    <span class="n">btn2</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">top</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;close&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">top</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
     
-<span class="n">btn</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Open new Window&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="nb">open</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
 
-     </div>
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
-</div>
+
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#File dialog</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span>
-<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">filedialog</span>
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-<span class="n">root</span><span class="o">.</span><span class="n">filename</span> <span class="o">=</span>  <span class="n">filedialog</span><span class="o">.</span><span class="n">askopenfilename</span><span class="p">(</span><span class="n">initialdir</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Select file&quot;</span><span class="p">,</span><span class="n">filetypes</span> <span class="o">=</span> <span class="p">((</span><span class="s2">&quot;jpeg files&quot;</span><span class="p">,</span><span class="s2">&quot;*.jpg&quot;</span><span class="p">),(</span><span class="s2">&quot;all files&quot;</span><span class="p">,</span><span class="s2">&quot;*.*&quot;</span><span class="p">)))</span>
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Sliders</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">master</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-
-<span class="k">def</span> <span class="nf">getThrottle</span><span class="p">():</span>
-    <span class="n">Label</span><span class="p">(</span><span class="n">master</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">Throttle</span><span class="o">.</span><span class="n">get</span><span class="p">())</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">Throttle</span> <span class="o">=</span> <span class="n">Scale</span><span class="p">(</span><span class="n">master</span><span class="p">,</span> <span class="n">from_</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">orient</span><span class="o">=</span><span class="n">HORIZONTAL</span><span class="p">)</span>
-<span class="n">Throttle</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">Throttle</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;CLICK ME&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">getThrottle</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check box</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">show</span><span class="p">():</span>
-    <span class="n">label</span> <span class="o">=</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">var</span><span class="o">.</span><span class="n">get</span><span class="p">())</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">var</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-
-<span class="n">c</span> <span class="o">=</span> <span class="n">Checkbutton</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Check this box&quot;</span><span class="p">,</span><span class="n">variable</span><span class="o">=</span><span class="n">var</span><span class="p">,</span><span class="n">onvalue</span><span class="o">=</span><span class="s2">&quot;on&quot;</span><span class="p">,</span><span class="n">offvalue</span><span class="o">=</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">select</span><span class="p">()</span>
-<span class="n">c</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-
-<span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Show selection&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">show</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Dropdown</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-<span class="n">clicked</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">()</span>
-<span class="n">clicked</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;Monday&#39;</span><span class="p">)</span>
-<span class="n">list2</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Monday&quot;</span><span class="p">,</span><span class="s2">&quot;Thuesday&quot;</span><span class="p">,</span><span class="s2">&quot;Wedsndet&quot;</span><span class="p">]</span>
-<span class="n">drop</span> <span class="o">=</span> <span class="n">OptionMenu</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">clicked</span><span class="p">,</span><span class="o">*</span><span class="n">list2</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-
-<span class="k">def</span> <span class="nf">show</span><span class="p">():</span>
-    <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">clicked</span><span class="o">.</span><span class="n">get</span><span class="p">())</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Click&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">show</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Keyboard Events</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">clicker</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-    <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Clicked&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-<span class="n">kek</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Click Me&quot;</span><span class="p">)</span>
-<span class="n">kek</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-2&gt;&quot;</span><span class="p">,</span><span class="n">clicker</span><span class="p">)</span>
-<span class="n">kek</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-
-
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Dropbox</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">ttk</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backends.backend_tkagg</span> <span class="kn">import</span> <span class="n">FigureCanvasTkAgg</span><span class="p">,</span><span class="n">NavigationToolbar2Tk</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
 <span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
 <span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_quit</span><span class="p">():</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>     <span class="c1"># stops mainloop</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>  <span class="c1"># this is necessary on Windows to prevent</span>
+                    <span class="c1"># Fatal Python Error: PyEval_RestoreThread: NULL tstate    </span>
+               
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">val</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">9</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_clear</span><span class="p">():</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+        
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbarFrame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">)</span>
+<span class="n">toolbarFrame</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbar</span> <span class="o">=</span> <span class="n">NavigationToolbar2Tk</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">toolbarFrame</span><span class="p">)</span>
+
+
+
 <span class="n">option</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;M&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;T&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;W&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Th&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Fr&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Sa&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Su&#39;</span>  
+    <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;4&#39;</span><span class="p">,</span>  
 <span class="p">]</span>
 
 <span class="n">clicked</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">();</span>
 <span class="n">clicked</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">option</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 
-<span class="k">def</span> <span class="nf">combod</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-    <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="n">combo</span><span class="o">.</span><span class="n">get</span><span class="p">())</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
 
 <span class="n">combo</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Combobox</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="n">option</span><span class="p">)</span>
 <span class="n">combo</span><span class="o">.</span><span class="n">current</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">combo</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;&lt;ComboboxSelected&gt;&gt;&quot;</span><span class="p">,</span><span class="n">combod</span><span class="p">)</span>
-<span class="n">combo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">combo</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Plot&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">click</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">combo</span><span class="o">.</span><span class="n">get</span><span class="p">())))</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Clear&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">_clear</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">_quit</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 
 <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
@@ -14956,457 +14638,128 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Menu bars</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="jp-Cell-outputWrapper">
 
 
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
+<div class="jp-OutputArea jp-Cell-outputArea">
 
-<span class="c1">#Menu configuration</span>
-<span class="n">my_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">menu</span><span class="o">=</span><span class="n">my_menu</span><span class="p">)</span>
-
-<span class="c1">#Create file</span>
-
-<span class="n">file_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">my_menu</span><span class="p">)</span>
-<span class="n">my_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;File&quot;</span><span class="p">,</span><span class="n">menu</span><span class="o">=</span><span class="n">file_menu</span><span class="p">)</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;New...&quot;</span><span class="p">)</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">root</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
-
-<span class="c1">#Create edit</span>
-<span class="n">edit_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">my_menu</span><span class="p">)</span>
-<span class="n">my_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Edit&quot;</span><span class="p">,</span><span class="n">menu</span><span class="o">=</span><span class="n">edit_menu</span><span class="p">)</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cut&quot;</span><span class="p">)</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Copy&quot;</span><span class="p">)</span>
-
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Menu and frames</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-<span class="c1">#Menu configuration</span>
-<span class="n">my_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">menu</span><span class="o">=</span><span class="n">my_menu</span><span class="p">)</span>
-
-<span class="c1">#Create file</span>
-
-<span class="k">def</span> <span class="nf">file_new</span><span class="p">():</span>
-    <span class="n">hide_all_frames</span><span class="p">()</span>
-    <span class="n">file_new_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">Label</span><span class="p">(</span><span class="n">file_new_frame</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Something apear&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    
-    
-<span class="k">def</span> <span class="nf">edit_cut</span><span class="p">():</span>
-    <span class="n">hide_all_frames</span><span class="p">()</span>
-    <span class="n">edit_cut_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>    
-
-<span class="k">def</span> <span class="nf">hide_all_frames</span><span class="p">():</span>
-    <span class="n">file_new_frame</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
-    <span class="n">edit_cut_frame</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
-<span class="c1">#pack_forget - to hide not to kill</span>
+<div class="jp-OutputArea-child">
 
     
-<span class="n">file_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">my_menu</span><span class="p">)</span>
-<span class="n">my_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;File&quot;</span><span class="p">,</span><span class="n">menu</span><span class="o">=</span><span class="n">file_menu</span><span class="p">)</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;New...&quot;</span><span class="p">,</span><span class="n">command</span> <span class="o">=</span> <span class="n">file_new</span><span class="p">)</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">root</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
-<span class="c1">#Create edit</span>
-<span class="n">edit_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">my_menu</span><span class="p">)</span>
-<span class="n">my_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Edit&quot;</span><span class="p">,</span><span class="n">menu</span><span class="o">=</span><span class="n">edit_menu</span><span class="p">)</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cut&quot;</span><span class="p">,</span><span class="n">command</span> <span class="o">=</span> <span class="n">edit_cut</span><span class="p">)</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Copy&quot;</span><span class="p">)</span>
 
-<span class="c1">#Create frames</span>
 
-<span class="n">file_new_frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">edit_cut_frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
 
-     </div>
-</div>
-</div>
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Delete children of frames</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-<span class="c1">#Menu configuration</span>
-<span class="n">my_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">menu</span><span class="o">=</span><span class="n">my_menu</span><span class="p">)</span>
-
-<span class="c1">#Create file</span>
-
-<span class="k">def</span> <span class="nf">file_new</span><span class="p">():</span>
-    <span class="n">hide_all_frames</span><span class="p">()</span>
-    <span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;400x400&#39;</span><span class="p">)</span>
-    <span class="n">file_new_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">Label</span><span class="p">(</span><span class="n">file_new_frame</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s2">&quot;Something apear&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-    
-    
-<span class="k">def</span> <span class="nf">edit_cut</span><span class="p">():</span>
-    <span class="n">hide_all_frames</span><span class="p">()</span>
-    <span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">&#39;400x400&#39;</span><span class="p">)</span>
-    <span class="n">edit_cut_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="s2">&quot;both&quot;</span><span class="p">,</span><span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>    
-
-<span class="k">def</span> <span class="nf">hide_all_frames</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">file_new_frame</span><span class="o">.</span><span class="n">winfo_children</span><span class="p">():</span>
-        <span class="n">widget</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
-    <span class="k">for</span> <span class="n">widget</span> <span class="ow">in</span> <span class="n">edit_cut_frame</span><span class="o">.</span><span class="n">winfo_children</span><span class="p">():</span>
-        <span class="n">widget</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>    
-        
-    <span class="n">file_new_frame</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
-    <span class="n">edit_cut_frame</span><span class="o">.</span><span class="n">pack_forget</span><span class="p">()</span>
-<span class="c1">#pack_forget - to hide not to kill</span>
-
-    
-<span class="n">file_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">my_menu</span><span class="p">,</span><span class="n">tearoff</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">my_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;File&quot;</span><span class="p">,</span><span class="n">menu</span><span class="o">=</span><span class="n">file_menu</span><span class="p">)</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;New...&quot;</span><span class="p">,</span><span class="n">command</span> <span class="o">=</span> <span class="n">file_new</span><span class="p">)</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
-<span class="n">file_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">root</span><span class="o">.</span><span class="n">quit</span><span class="p">)</span>
-
-<span class="c1">#Create edit</span>
-<span class="n">edit_menu</span> <span class="o">=</span> <span class="n">Menu</span><span class="p">(</span><span class="n">my_menu</span><span class="p">,</span><span class="n">tearoff</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">my_menu</span><span class="o">.</span><span class="n">add_cascade</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Edit&quot;</span><span class="p">,</span><span class="n">menu</span><span class="o">=</span><span class="n">edit_menu</span><span class="p">)</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Cut&quot;</span><span class="p">,</span><span class="n">command</span> <span class="o">=</span> <span class="n">edit_cut</span><span class="p">)</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_separator</span><span class="p">()</span>
-<span class="n">edit_menu</span><span class="o">.</span><span class="n">add_command</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;Copy&quot;</span><span class="p">)</span>
-
-<span class="c1">#Create frames</span>
-
-<span class="n">file_new_frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">)</span>
-<span class="n">edit_cut_frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span><span class="n">bg</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List boxes</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-<span class="n">my_list</span><span class="o">=</span><span class="n">Listbox</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-<span class="n">my_list</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="c1"># Add item to listbox</span>
-<span class="c1"># my_list.insert(END,&quot;This is an itme&quot;)</span>
-<span class="c1"># my_list.insert(END,&quot;This is an itme&quot;)</span>
-<span class="c1"># my_list.insert(0,&quot;This is an dd&quot;)</span>
-
-<span class="c1">#Add list of items</span>
-<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span>
-<span class="p">]</span>
-
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list2</span><span class="p">:</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span><span class="n">item</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">delete_all</span><span class="p">():</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span> 
-<span class="k">def</span> <span class="nf">select</span><span class="p">():</span>
-    <span class="n">my_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ANCHOR</span><span class="p">))</span> 
-<span class="k">def</span> <span class="nf">select</span><span class="p">():</span>
-    <span class="n">my_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ANCHOR</span><span class="p">))</span>     
-    
-
-<span class="k">global</span> <span class="n">my_label</span>
-<span class="n">my_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Delete&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">delete_all</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">my_button2</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Select&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">select</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">my_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">my_label</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># List boxes scrollbars</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
-
-
-<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
-<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
-<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
-
-
-
-<span class="c1">#Create frame</span>
-<span class="n">my_frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-<span class="n">my_scroll</span> <span class="o">=</span> <span class="n">Scrollbar</span><span class="p">(</span><span class="n">my_frame</span><span class="p">,</span><span class="n">orient</span><span class="o">=</span><span class="n">VERTICAL</span><span class="p">)</span>
-
-
-<span class="n">my_list</span><span class="o">=</span><span class="n">Listbox</span><span class="p">(</span><span class="n">my_frame</span><span class="p">,</span><span class="n">yscrollcommand</span><span class="o">=</span><span class="n">my_scroll</span><span class="o">.</span><span class="n">set</span><span class="p">)</span>
-<span class="n">my_scroll</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">my_list</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
-<span class="n">my_scroll</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
-<span class="n">my_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">my_list</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="c1">#Add list of items</span>
-<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span>
-<span class="p">]</span>
-
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list2</span><span class="p">:</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span><span class="n">item</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">delete_all</span><span class="p">():</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">END</span><span class="p">)</span> 
-<span class="k">def</span> <span class="nf">select</span><span class="p">():</span>
-    <span class="n">my_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ANCHOR</span><span class="p">))</span> 
-<span class="k">def</span> <span class="nf">select</span><span class="p">():</span>
-    <span class="n">my_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">ANCHOR</span><span class="p">))</span>     
-    
-
-<span class="k">global</span> <span class="n">my_label</span>
-<span class="n">my_button</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Delete&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">delete_all</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">my_button2</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Select&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">select</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">my_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">my_label</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># SELECT MORE ITEMS</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Axis selection</span>
 <span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">ttk</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backends.backend_tkagg</span> <span class="kn">import</span> <span class="n">FigureCanvasTkAgg</span><span class="p">,</span><span class="n">NavigationToolbar2Tk</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
 
 
 <span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
 <span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
 <span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_quit</span><span class="p">():</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>     <span class="c1"># stops mainloop</span>
+    <span class="n">root</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>  <span class="c1"># this is necessary on Windows to prevent</span>
+                    <span class="c1"># Fatal Python Error: PyEval_RestoreThread: NULL tstate    </span>
+               
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">click</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">val</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">val</span><span class="o">==</span><span class="mi">3</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">_clear</span><span class="p">():</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+
+    
+<span class="k">def</span> <span class="nf">change_axis</span><span class="p">(</span><span class="n">geg1</span><span class="p">,</span><span class="n">geg2</span><span class="p">):</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="n">geg1</span><span class="p">,</span> <span class="n">geg2</span><span class="p">])</span>
+    <span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+        
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbarFrame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">)</span>
+<span class="n">toolbarFrame</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">toolbar</span> <span class="o">=</span> <span class="n">NavigationToolbar2Tk</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">toolbarFrame</span><span class="p">)</span>
 
 
 
-<span class="c1">#Create frame</span>
-<span class="n">my_frame</span> <span class="o">=</span> <span class="n">Frame</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-<span class="n">my_scroll</span> <span class="o">=</span> <span class="n">Scrollbar</span><span class="p">(</span><span class="n">my_frame</span><span class="p">,</span><span class="n">orient</span><span class="o">=</span><span class="n">VERTICAL</span><span class="p">)</span>
-
-
-<span class="n">my_list</span><span class="o">=</span><span class="n">Listbox</span><span class="p">(</span><span class="n">my_frame</span><span class="p">,</span><span class="n">yscrollcommand</span><span class="o">=</span><span class="n">my_scroll</span><span class="o">.</span><span class="n">set</span><span class="p">,</span><span class="n">selectmode</span><span class="o">=</span><span class="n">MULTIPLE</span><span class="p">)</span>
-<span class="n">my_scroll</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">command</span><span class="o">=</span><span class="n">my_list</span><span class="o">.</span><span class="n">yview</span><span class="p">)</span>
-<span class="n">my_scroll</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">RIGHT</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="n">Y</span><span class="p">)</span>
-<span class="n">my_frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">my_list</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-
-<span class="c1">#Add list of items</span>
-<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Three&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;One&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;Two&#39;</span>
+<span class="n">option</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;2&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;4&#39;</span><span class="p">,</span>  
 <span class="p">]</span>
 
-<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list2</span><span class="p">:</span>
-    <span class="n">my_list</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">END</span><span class="p">,</span><span class="n">item</span><span class="p">)</span>
+<span class="n">clicked</span> <span class="o">=</span> <span class="n">StringVar</span><span class="p">();</span>
+<span class="n">clicked</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">option</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
 
-<span class="k">def</span> <span class="nf">select_all</span><span class="p">():</span>
-    <span class="n">result</span><span class="o">=</span><span class="s1">&#39;&#39;</span>
-    
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">my_list</span><span class="o">.</span><span class="n">curselection</span><span class="p">():</span>
-        <span class="n">result</span> <span class="o">+=</span><span class="nb">str</span><span class="p">(</span><span class="n">my_list</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
-    
-    <span class="n">my_label</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">result</span><span class="p">)</span>
-    
-    
-<span class="k">def</span> <span class="nf">delete_selected</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">my_list</span><span class="o">.</span><span class="n">curselection</span><span class="p">()):</span>
-        <span class="n">my_list</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-    
-    
-<span class="k">global</span> <span class="n">my_label</span>
 
-<span class="n">my_button3</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Select All&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">select_all</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">my_button5</span> <span class="o">=</span> <span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Delete Selected&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">delete_selected</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
-<span class="n">my_label</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">my_label</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+
+<span class="n">combo</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Combobox</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="n">option</span><span class="p">)</span>
+<span class="n">combo</span><span class="o">.</span><span class="n">current</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">combo</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Plot&quot;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">click</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">combo</span><span class="o">.</span><span class="n">get</span><span class="p">())))</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Clear&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">_clear</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Exit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">_quit</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="n">e1</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">e1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">e1</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;0&quot;</span><span class="p">)</span>
+
+<span class="n">e2</span> <span class="o">=</span> <span class="n">Entry</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">e2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">e2</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+
+
+<span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Change axis scale&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span><span class="n">change_axis</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">e1</span><span class="o">.</span><span class="n">get</span><span class="p">()),</span><span class="nb">int</span><span class="p">(</span><span class="n">e2</span><span class="o">.</span><span class="n">get</span><span class="p">())))</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span><span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
@@ -15416,18 +14769,29 @@ a.anchor-link {
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#config</span>
-</pre></div>
+<div class="jp-Cell-outputWrapper">
 
-     </div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
+
 </div>
+
+</div>
+
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
