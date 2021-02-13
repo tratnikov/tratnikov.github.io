@@ -9,7 +9,7 @@
 
 
 <style type="text/css">
-    pre { line-height: 125%; }
+    pre { line-height: 125%; margin: 0; }
 td.linenos pre { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: #000000; background-color: #f0f0f0; padding-left: 5px; padding-right: 5px; }
 td.linenos pre.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
@@ -14916,7 +14916,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
@@ -15422,7 +15422,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#config</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#date picker</span>
 </pre></div>
 
      </div>
@@ -15433,10 +15433,102 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tkcalendar</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">Tk</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Data quality&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">iconbitmap</span><span class="p">(</span><span class="s1">&#39;icon.ico&#39;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;600x400&quot;</span><span class="p">)</span>
+
+
+<span class="n">cal</span> <span class="o">=</span> <span class="n">Calendar</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">selectmode</span><span class="o">=</span><span class="s2">&quot;day&quot;</span><span class="p">,</span><span class="n">year</span><span class="o">=</span><span class="mi">2021</span><span class="p">,</span><span class="n">month</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">day</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span>
+<span class="n">cal</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">grab_date</span><span class="p">():</span>
+    <span class="n">somel</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="n">cal</span><span class="o">.</span><span class="n">get_date</span><span class="p">())</span>
+
+<span class="n">Button</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;Get Date&#39;</span><span class="p">,</span><span class="n">command</span><span class="o">=</span><span class="n">grab_date</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">somel</span> <span class="o">=</span> <span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">somel</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+
+
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># treeview</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[213]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+<span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">ttk</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+
+
+<span class="n">style</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Style</span><span class="p">()</span>
+
+
+<span class="n">style</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Treeview&quot;</span><span class="p">,</span>
+         <span class="n">foreground</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span><span class="s1">&#39;black&#39;</span><span class="p">)],</span>
+         <span class="n">background</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span><span class="s1">&#39;white&#39;</span><span class="p">)])</span>
+
+
+
+
+<span class="n">sample</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+                   <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2012</span><span class="p">,</span> <span class="mi">2014</span><span class="p">,</span> <span class="mi">2013</span><span class="p">,</span> <span class="mi">2014</span><span class="p">],</span>
+                   <span class="s1">&#39;sale&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="mi">31</span><span class="p">]})</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+
+<span class="n">tree</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Treeview</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+<span class="n">tree</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tree</span><span class="p">[</span><span class="s2">&quot;columns&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="s1">&#39;year&#39;</span><span class="p">,</span><span class="s1">&#39;sale&#39;</span><span class="p">)</span>
+
+<span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="s2">&quot;#0&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">stretch</span><span class="o">=</span><span class="n">NO</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">:</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">column</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+    <span class="n">tree</span><span class="o">.</span><span class="n">heading</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">2013</span><span class="p">:</span>
+        <span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">END</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">row</span><span class="p">),</span><span class="n">tag</span><span class="o">=</span><span class="s2">&quot;falty&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tree</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">END</span><span class="p">,</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">values</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">row</span><span class="p">))</span>    
+
+        
+<span class="n">tree</span><span class="o">.</span><span class="n">tag_configure</span><span class="p">(</span><span class="s1">&#39;falty&#39;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
 </pre></div>
 
      </div>
